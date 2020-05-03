@@ -17,6 +17,8 @@ services:
     volumes:
       - .:/app
     working_dir: /app
+    env_file:
+      - .env
 
   git:
     build:
@@ -28,3 +30,5 @@ services:
       - .:/app
       - ~/.gitconfig:/etc/gitconfig:ro
     working_dir: /app
+    env_file:
+      - .env

@@ -1,6 +1,6 @@
 # Insee
 
-A PHP client library for accessing INSEE data for https://api.insee.fr/
+A PHP client library for accessing INSEE data for [https://api.insee.fr/](https://api.insee.fr/)
 
 [![Build Status](https://travis-ci.org/davaxi/insee.svg)](https://travis-ci.org/davaxi/insee)
 [![Latest Stable Version](https://poser.pugx.org/davaxi/insee/v/stable)](https://packagist.org/packages/davaxi/insee) 
@@ -89,4 +89,4 @@ var_dump($response);
 
 ## Documenation of API
 
-Use directly https://api.insee.f documentation for all request and response. 
+Use directly [https://api.insee.fr/](https://api.insee.fr/) documentation for all request and response. 

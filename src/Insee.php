@@ -122,21 +122,20 @@ class Insee
     }
 
     /**
-     * @param string $method
      * @param string $path
      * @param array  $data
      *
      * @return array
      */
-    public function request(string $method, string $path, array $data)
+    public function getRequest(string $path, array $data)
     {
         $this->checkAccessToken();
 
         $result = $this->client->request(
-            $method,
+            'GET',
             static::INSEE_API_DOMAIN . $path,
             [
-                'form_params' => $data,
+                'query' => $data,
                 'headers' => [
                     'Authorization' => $this->getAuthorizationHeaderByAccessToken(),
                 ],

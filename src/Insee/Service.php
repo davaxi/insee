@@ -27,14 +27,13 @@ abstract class Service
     }
 
     /**
-     * @param string $method
      * @param string $path
      * @param array  $options
      *
      * @return array
      */
-    protected function request(string $method, string$path, array $options)
+    protected function getRequest(string$path, array $options)
     {
-        return $this->client->request($method, static::BASE_PATH . $path, $options);
+        return $this->client->getRequest(static::BASE_PATH . $path, $options);
     }
 }

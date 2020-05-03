@@ -1,7 +1,7 @@
 {
   "name": "davaxi/insee",
   "description": "A PHP client library for accessing INSEE data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "library",
   "keywords": [
     "insee",

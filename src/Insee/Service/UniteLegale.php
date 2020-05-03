@@ -23,7 +23,7 @@ class UniteLegale extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siren', $options);
+        return $this->getRequest('/siren', $options);
     }
 
     /**
@@ -38,7 +38,7 @@ class UniteLegale extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siren/' . $siren, $options);
+        return $this->getRequest('/siren/' . $siren, $options);
     }
 
     /**
@@ -52,7 +52,7 @@ class UniteLegale extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siren/nonDiffusibles', $options);
+        return $this->getRequest('/siren/nonDiffusibles', $options);
     }
 
     /**
@@ -66,6 +66,6 @@ class UniteLegale extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siren/refusImmatriculationRcs', $options);
+        return $this->getRequest('/siren/refusImmatriculationRcs', $options);
     }
 }

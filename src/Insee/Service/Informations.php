@@ -16,6 +16,6 @@ class Informations extends Service
      */
     public function informations()
     {
-        return $this->request('GET', '/informations', []);
+        return $this->getRequest('/informations', []);
     }
 }

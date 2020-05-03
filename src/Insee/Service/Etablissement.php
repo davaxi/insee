@@ -23,7 +23,7 @@ class Etablissement extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siret', $options);
+        return $this->getRequest('/siret', $options);
     }
 
     /**
@@ -38,7 +38,7 @@ class Etablissement extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siret/' . $siret, $options);
+        return $this->getRequest('/siret/' . $siret, $options);
     }
 
     /**
@@ -52,7 +52,7 @@ class Etablissement extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siret/liensSuccession', $options);
+        return $this->getRequest('/siret/liensSuccession', $options);
     }
 
     /**
@@ -66,6 +66,6 @@ class Etablissement extends Service
             $options = $options->getOptions();
         }
 
-        return $this->request('GET', '/siret/nonDiffusible', $options);
+        return $this->getRequest('/siret/nonDiffusible', $options);
     }
 }

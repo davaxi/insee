@@ -1,0 +1,30 @@
+version: '3'
+services:
+  composer:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  phpunit:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    entrypoint:
+      - /app/vendor/bin/phpunit
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  git:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    entrypoint:
+      - git
+    volumes:
+      - .:/app
+      - ~/.gitconfig:/etc/gitconfig:ro
+    working_dir: /app

@@ -1,0 +1,28 @@
+language: php
+
+addons:
+  code_climate:
+    repo_token: 9243837249dd8bc576271c1d361ceffe6eb8b70630a361c0b60b993fa9502aa3
+
+dist: trusty
+
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+  - '7.3'
+  - '7.4'
+
+before_install:
+  - composer self-update
+
+install:
+  - rm composer.json
+  - mv composer.travis.json composer.json
+  - composer install
+
+script:
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - vendor/bin/test-reporter

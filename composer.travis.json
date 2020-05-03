@@ -1,0 +1,38 @@
+{
+  "name": "davaxi/insee",
+  "description": "A PHP client library for accessing INSEE data",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "insee",
+    "php",
+    "sirene"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Patiashvili",
+      "email": "stratagem.david@gmail.com",
+      "homepage": "https://www.linkedin.com/in/davaxi/",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/davaxi/insee/issues",
+    "source": "https://github.com/davaxi/insee/releases"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "require-dev": {
+    "php": ">=7.0.0",
+    "phpunit/phpunit": "^6.5",
+    "codeclimate/php-test-reporter": "^0.4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Davaxi\\": "src/"
+    }
+  }
+}

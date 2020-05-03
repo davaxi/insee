@@ -9,8 +9,7 @@ use GuzzleHttp\Client;
  */
 class Insee
 {
-    const INSEE_GET_TOKEN = 'https://api.insee.fr/token';
-    const INSEE_REVOKE_TOKEN = 'https://api.insee.fr/revoke';
+    const INSEE_API_DOMAIN = 'https://api.insee.fr';
     // 7 days
     const DEFAULT_VALIDITY_PERIOD = 604800;
 
@@ -79,7 +78,7 @@ class Insee
         }
         $result = $this->client->request(
             'POST',
-            static::INSEE_GET_TOKEN,
+            static::INSEE_API_DOMAIN . '/token',
             [
                 'form_params' => [
                     'grant_type' => 'client_credentials',
@@ -109,7 +108,7 @@ class Insee
 
         $result = $this->client->request(
             'POST',
-            static::INSEE_REVOKE_TOKEN,
+            static::INSEE_API_DOMAIN . '/revoke',
             [
                 'form_params' => [
                     'token' => $this->getAccessTokenValue(),
@@ -120,6 +119,39 @@ class Insee
             ]
         );
         $this->accessToken = null;
+    }
+
+    /**
+     * @param string $method
+     * @param string $path
+     * @param array  $data
+     *
+     * @return array
+     */
+    public function request(string $method, string $path, array $data)
+    {
+        $this->checkAccessToken();
+
+        $result = $this->client->request(
+            $method,
+            static::INSEE_API_DOMAIN . $path,
+            [
+                'form_params' => $data,
+                'headers' => [
+                    'Authorization' => $this->getAuthorizationHeaderByAccessToken(),
+                ],
+            ]
+        );
+
+        return json_decode($result->getBody(), true);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationHeaderByAccessToken() : string
+    {
+        return sprintf('Bearer %s', $this->getAccessTokenValue());
     }
 
     /**

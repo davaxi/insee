@@ -2,6 +2,14 @@
 
 A PHP client library for accessing INSEE data for https://api.insee.fr/
 
+[![Build Status](https://travis-ci.org/davaxi/insee.svg)](https://travis-ci.org/davaxi/insee)
+[![Latest Stable Version](https://poser.pugx.org/davaxi/insee/v/stable)](https://packagist.org/packages/davaxi/insee) 
+[![Total Downloads](https://poser.pugx.org/davaxi/insee/downloads)](https://packagist.org/packages/davaxi/insee) 
+[![Latest Unstable Version](https://poser.pugx.org/davaxi/insee/v/unstable)](https://packagist.org/packages/davaxi/insee) 
+[![License](https://poser.pugx.org/davaxi/insee/license)](https://packagist.org/packages/davaxi/insee)
+[![Maintainability](https://api.codeclimate.com/v1/badges/347466fbd9add873f19d/maintainability)](https://codeclimate.com/github/davaxi/insee/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/347466fbd9add873f19d/test_coverage)](https://codeclimate.com/github/davaxi/insee/test_coverage)
+
 # Installation
 
 This page contains information about installing the Library for PHP.

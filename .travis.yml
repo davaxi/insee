@@ -1,28 +1,25 @@
 language: php
-
 addons:
   code_climate:
     repo_token: 9243837249dd8bc576271c1d361ceffe6eb8b70630a361c0b60b993fa9502aa3
-
 dist: trusty
-
 php:
-  - '7.0'
-  - '7.1'
-  - '7.2'
-  - '7.3'
-  - '7.4'
-
+- '7.0'
+- '7.1'
+- '7.2'
+- '7.3'
+- '7.4'
 before_install:
-  - composer self-update
-
+- composer self-update
 install:
-  - rm composer.json
-  - mv composer.travis.json composer.json
-  - composer install
-
+- rm composer.json
+- mv composer.travis.json composer.json
+- composer install
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-
+- vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 after_script:
-  - vendor/bin/test-reporter
+- vendor/bin/test-reporter
+env:
+  global:
+  - secure: n9DcyyOQIS4/h/jjpcrtFw9DdEC2P9SumqHcmZ47F4r4TU8XaF3m6jnZeyZ1hrJlJQG+2TKfRmtIVrFh8xO4Uw4ow6JG1ZSw4NZub8a3TV2xnR7Ew/89exXnPp5Ton1UI8ijSeXm2+tMca4mC4NH30GMsuFpPjKLz2sWrGLWClkeAPuchg4qR/6vwp+uK9UCMNn9IdbZJld35JsExizWH5H5VdLozCHh1sp2l7Wi3j3dC3YJchdI1E9E1WtNVMP9DXRLk8EvpSog3XF/+09tV/vpoc+rBIPNOqU9YT1WqZgBWRVE3fAp99rVErTK1xwBbgbbQo4s9r5ZnbaOA3A9eskd3QzOTgzJ/dhBrBelpX87+mJQhyfzw4ZIQ5A7STF2N6KfyjUx0szIUO7mHsQX6VzPqiRQLEbASccmxeoGan8CXvFJN/g9WxseEMq6umY3cXgueUP83DJIk8QcjFgaUecKiLMWOUfKZ4NViGU5VRrjNvqsXdMxjzZguJaguhy6yLBI+DvatXNKFRGW4FMZFvYLQ3BnaNfWwI50UGaodeGT+VsiVEC8N6oVEM2MVuw7himXJtgX/Lkp5RMH5UHjUyzxW3/CKWRhEepbZRkS9MpMlbAqyGfSjnD+UODfDz3TbE2GHGKCi+Xm3Mv+3kCAjmdZ2FikHao6Bc4UvW+kpwI=
+  - secure: UlV9F68ITkjOnO9tSf9BsyJzB55efLOb/HlxY8LsgaJfbVm7YBp+fa81NDSm94MOo33okNUyVQK/bqDX8PQGUPTDDC3rxJwOIMvqHv3ckUu2+ypeHo8rZfW3ivKNUa3lcKYQOYVGVEDyQMj9ccCT8C+/NELwjBy5OJI2nmIcKXMDPMg4RWbIbniLPPJkoMQpSttsfkeGCksWTj+cPCLvSJazDB2EypIRN48JRseAwmgTTE14LoN8bIbpX6YXg6oXs1I1PNKgutAd98Xts4TBCOT6eal9JyPFJoygQiL0scilImZbq/9i4Fv2RCatPuYxiQRxvUgBBm8nQYc/YblB9hLRGrTSu8B4gXNjwkQ+dOxx0FkDBAxQo80aV09kIxh3qeQfnBz6jZ4LFG2IrA/34UuhMsohBiGJFlYy7ydOK3lAiGfk4ODw3dqrwTbABaWh9/8MPs8QYXIvHVNsEcqOQJ3OVa53xdO93BhJrtdnlidk67G8TsVilS3DNrtQHWZjqAchnkbOwv9HhjEs5NL5bOuAxUYx8SK09awB5t+PJyEs52MIDv/IG7Ca2i7zx0C+6cUUCsVkJEvAuf5SGx8hUH+A3u14fFC/uktdQ11KMw4O7cjdOccA5i8iAqS8oqWxUgvqd6MiWTdGr3zY879ZqjipfE+3VrwDbdinnn69OjY=
